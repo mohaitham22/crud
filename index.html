@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- Link to font awesome for icons -->
+    <link rel="stylesheet" href="./css/all.min.css">
+    <!-- Link to Bootstrap for styling -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+     <!-- Link to your custom CSS -->
+     <link rel="stylesheet" href="/css/style.css">
+    <title>CRUD - Product Management System</title>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="crud container m-auto text-uppercase">
+            <div class="head">
+                <h2>crud</h2>
+                <p>PRODUCT MANAGEMENT SYSTEM</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content section -->
+    <main>
+        <!-- Input section -->
+        <section class="inputs container position-">
+            <!-- Your input fields or forms can go here -->
+            
+            <input  type="text" name="title" id="title" placeholder="title" class="w-100 m-auto ">
+            
+            <div class="prices w-100">
+                <input onkeyup="getTotal()" type="number" name="price" id="price" placeholder="price">
+                <input onkeyup="getTotal()" type="number" name="taxes" id="taxes" placeholder="taxes">
+                <input onkeyup="getTotal()" type="number" name="ads" id="ads" placeholder="ads">
+                <input onkeyup="getTotal()" type="number" name="discount" id="discount" placeholder="discount">
+                <!-- <button class="btn btn-danger" type="submit" id="btn1">Total:</button> -->
+                <small  id="total"></small>
+            </div>
+            <input type="number" name="count" id="count" placeholder="count" class="w-100">
+            <input type="text" name="category" id="category" placeholder="category" class="w-100">
+            <button onclick="createPro()" class="btn btn-primary w-100 align-items-center mt-3" type="submit" id="create">create</button>
+            
+        </section>
+
+        <!-- Output section -->
+        <section class="outputs">
+            <!-- Output content will be displayed here -->
+            <div class="container">
+                <input type="search" onkeyup="searchByData(this.value)" name="search" id="search" placeholder="search" class="w-100">
+                <div class="btn-search  position-relative d-flex justify-content-between">
+                    <button onclick="getSearchMood(this.id)" class="btn btn-primary start-0 mt-3" type="submit" id="searchTitle">Search by title</button>
+                    <button onclick="getSearchMood(this.id)" class="btn btn-primary mt-3  end-0" type="submit" id="searchCate">Search by category</button>
+                </div>
+            </div><br>
+            <div id="deletAll" class="w-75 m-auto" >
+                
+            </div>
+            <br>
+            <div class="container">
+                <table class="table text-center">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th class="text-uppercase" scope="col">Title</th>
+                        <th class="text-uppercase" scope="col">Price</th>
+                        <th class="text-uppercase" scope="col">Taxes</th>
+                        <th class="text-uppercase" scope="col">ADS</th>
+                        <th class="text-uppercase" scope="col">Discount</th>
+                        <th class="text-uppercase" scope="col">Total</th>
+                        <th class="text-uppercase" scope="col">Category</th>
+                        <th class="text-uppercase" scope="col">Update</th>
+                        <th class="text-uppercase" scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    
+                      
+                    </tbody>
+                  </table>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+<script src="./js/main.js"></script>
+   
+</body>
+</html>
